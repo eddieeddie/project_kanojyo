@@ -1,4 +1,5 @@
 <?php
+chmod("/file.txt",755);
 $text = $_POST["text"];
 if($text) {
     $text = htmlspecialchars($text);
