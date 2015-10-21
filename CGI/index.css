@@ -1,0 +1,10 @@
+#content {
+    height: 80%;
+    width :100%;
+    overflow-y: scroll;
+}
+
+body {
+    width: 40%;
+    margin: 0 auto;
+}
