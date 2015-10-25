@@ -12,42 +12,115 @@
 			left: 1%;
 		}
 		#cover
-	      display: inline;
-	      position: absolute;
+		    display: inline;
+		    position: absolute;
 		}
 		.占い{
-	      display: inline;
-	      position: absolute;
+		    display: inline;
+		    position: absolute;
 		}
 		#カップ{
-	      display: inline;
-	      position: absolute;
-	      opacity: 100;
-    	  left: 950px;
-    	  top: 90px;
+		    display: inline;
+		    position: absolute;
+	        opacity: 100;
+      	    left: 970px;
+    	    top: 140px;
 		}
 		#占い結果{
-	      display: inline;
-	      position: absolute;
-    	  left: 930px;
-    	  top: 100px;
-	      opacity: 0;
+	        display: inline;
+	        position: absolute;
+    	    left: 950px;
+    	    top: 150px;
+	        opacity: 0;
 		}
 		#占い結果文字{
-	      display: inline;
-	      position: absolute;
-    	  left: 970px;
-    	  top: 250px;
-	      opacity: 0;
+		    display: inline;
+		    position: absolute;
+		    left: 990px;
+		    top: 300px;
+		    opacity: 0;
 		}
 		.article{
-	      display: inline;
-	      position: absolute;
+		    display: inline;
+		    position: absolute;
 		}
-		
-		.chatroom{
-	      display: inline;
-	      position: absolute;
+		#mem1{
+		    display: inline;
+		    position: absolute;
+		    left: 0px;
+		    top: 1000px;
+		}
+		#mem2{
+		    display: inline;
+		    position: absolute;
+		    left: 0px;
+		    top: 1300px;
+		}
+		#mem3{
+		    display: inline;
+		    position: absolute;
+		    left: 300px;
+		    top: 1000px;
+		}
+		#mem4{
+		    display: inline;
+		    position: absolute;
+		    left: 300px;
+		    top: 1300px;
+		}
+		#chatroom{
+		    display: inline;
+		    position: absolute;
+		    left: 1000px;
+		    top: 850px;
+		}
+		#contents{
+		    height:600px;
+		    width :400px;
+			overflow-y: scroll;
+		  	z-index:2;
+		}
+		#note_chat{
+		    display: inline;
+		    position: absolute;
+		    left: -40px;
+		    top: -80px;
+		  	z-index:1;
+		}
+		#note_kokoa{
+		    display: inline;
+		    position: absolute;
+		    left: -270px;
+		    top: 170px;
+		  	z-index:1;
+		}
+		#deliver{
+		    display: inline;
+		    position: absolute;
+		    left: 50px;
+		    top:  750px;
+		  	z-index:2;
+		}
+		#like{
+		    display: inline;
+		    position: absolute;
+		    height:1000px;
+		    width :1000px;
+		    left: 700px;
+		    top:  700px;
+		}
+		#拍手{
+		    display: inline;
+		    position: absolute;
+		}
+		#拍手数{
+		    display: inline;
+		    position: absolute;
+		    left: 100px;
+		    top:  100px;
+		    font-size: 250%;
+		    color:#808BB6;
+		    font-family: 'Meiryo', cursive;
 		}
 	</style>
 	</meta>
@@ -78,26 +151,42 @@
 		      		<a href="chino/p1.html"><img src="cover.png"  width="445.5" height="250"   alt="cover"></a>
 		      	</div>
 	    		<div>
-	    			<font size="5" color="#808BB6"><br><br>李佳昇<br></font>
-					<a href="Member1/p1.html"><img src="Member1/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-	    			<font size="5" color="#808BB6"><br><br>吳映諦<br></font>
-					<a href="Member2/p1.html"><img src="Member2/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-	    			<font size="5" color="#808BB6"><br><br>鍾旭成<br></font>
-					<a href="Member3/p1.html"><img src="Member3/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-	    			<font size="5" color="#808BB6"><br><br>魏子軒<br></font>
-					<a href="Member4/p1.html"><img src="Member4/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-					
-					
-					
-					
-					
-					
-					<div class="chatroom">
-						<div id="content"></div>
-						<input type="text"></input>
-						<button>Submit!!</button>
-					</div>
+	    			<div id ="mem1">
+		    			<font size="5" color="#808BB6"><br><br>李佳昇<br></font>
+						<a href="Member1/p1.html"><img src="Member1/portrait_1.jpg" width ="200" height="200" alt="bb"></a>					
+	    			</div>
+	    			<div id ="mem2">
+		    			<font size="5" color="#808BB6"><br><br>吳映諦<br></font>
+						<a href="Member2/p1.html"><img src="Member2/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
+	    			</div>
+	    			<div id ="mem3">
+		    			<font size="5" color="#808BB6"><br><br>鍾旭成<br></font>
+						<a href="Member3/p1.html"><img src="Member3/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
+	    			</div>
+	    			<div id ="mem4">
+		    			<font size="5" color="#808BB6"><br><br>魏子軒<br></font>
+						<a href="Member4/p1.html"><img src="Member4/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
+						<br><br><br><br><br>
+	    			</div>
 		      	</div>
+	    		<div id="chatroom">
+	    			<font size="7" color="#808BB6"><br>チャットルーム<br></font>
+		      		<img id="note_chat" src="note_chat.png" width ="0" height="0" alt="cover">
+		      		<img id="note_kokoa" src="kokoa.gif" width ="276" height="509" alt="cover">
+				    <div id="contents"></div>
+				    <div id="deliver">
+					    <input type="text"></input>
+					    <button>転送！！</button>
+				    </div>
+		      	</div>
+			    <div id="like">
+	    			<nav>
+		    			<font size="5" color="#808BB6"><br>貴方も好きですか？クリックしてね<br><br></font>
+				    	<div id="拍手"><img id="拍手数図" src="拍手.jpg" width ="64" height="64" alt="cover"></div>
+				    	<div id="拍手数"></div>
+				    	<font size="5" color="#808BB6"><br>　　　　　　　　拍手<br><br></font>
+	    			</nav>
+			    </div>
 	   			<div class="占い">
 		      		</nav>
 			    		<div>
@@ -116,9 +205,6 @@
 			    </div>
 	      	</nav>
 	    </div>
-	
-		
-		<script src="index2.js"></script>
     </div>
   </body>
 </html>

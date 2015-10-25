@@ -26,3 +26,60 @@ function random_result()
 	document.getElementById('占い結果文字').style.opacity = 1;
 	document.getElementById('カップ').style.opacity = 0;
 }
+
+
+
+$(document).ready(function(){
+
+    setInterval(function(){
+      $.ajax({
+            method: "POST",
+            url: "http://luffy.ee.ncku.edu.tw/~usagi335/chat.php"
+        }).done(function(data){
+            $("#contents").html(data);
+        })
+    }, 1000);
+
+    $('button').click(function(){
+        $.ajax({
+            method: "POST",/*HTTP method for request*/
+            url: "http://luffy.ee.ncku.edu.tw/~usagi335/chat.php",
+            data: {text: $('input').val()}
+        }).done(function(data){
+            $("#contents").html(data);
+            $('input').val("");
+        });
+    });
+
+    $(document).keydown(function(e){
+       if(e.keyCode == 13) {
+           $.ajax({
+                method: "POST",
+                url: "http://luffy.ee.ncku.edu.tw/~usagi335/chat.php",
+                data: {text: $('input').val()}
+            }).done(function(data){
+                $("#contents").html(data);
+                $('input').val("");
+            });
+       }
+    });
+});
+
+$(document).ready(function(){	
+    setInterval(function(){
+      $.ajax({
+            method: "POST",
+            url: "http://luffy.ee.ncku.edu.tw/~usagi335/show_like.php"
+        }).done(function(data){
+            $("#拍手数").html(data);
+        })
+    }, 1000);
+	$("#拍手数図").one("click",function(){
+        $.ajax({
+            method: "POST",/*HTTP method for request*/
+            url: "http://luffy.ee.ncku.edu.tw/~usagi335/like.php"
+        }).done(function(data){
+            $("#拍手数").html(data);
+        });
+    });
+});
