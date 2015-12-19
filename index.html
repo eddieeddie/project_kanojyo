@@ -4,206 +4,136 @@
 	<meta charset="utf-8">
 	<title>彼女と学校で遊ぼう！！</title>
 	<style>
-		body{
-			background-color: #E7F0F6;
-		}
-		.all{ 
-			position: absolute;
-			left: 1%;
-		}
-		#cover
-		    display: inline;
-		    position: absolute;
-		}
-		.占い{
-		    display: inline;
-		    position: absolute;
-		}
-		#カップ{
-		    display: inline;
-		    position: absolute;
-	        opacity: 100;
-      	    left: 970px;
-    	    top: 140px;
-		}
-		#占い結果{
-	        display: inline;
-	        position: absolute;
-    	    left: 950px;
-    	    top: 150px;
-	        opacity: 0;
-		}
-		#占い結果文字{
-		    display: inline;
-		    position: absolute;
-		    left: 990px;
-		    top: 300px;
-		    opacity: 0;
-		}
-		.article{
-		    display: inline;
-		    position: absolute;
-		}
-		#mem1{
-		    display: inline;
-		    position: absolute;
-		    left: 0px;
-		    top: 1000px;
-		}
-		#mem2{
-		    display: inline;
-		    position: absolute;
-		    left: 0px;
-		    top: 1300px;
-		}
-		#mem3{
-		    display: inline;
-		    position: absolute;
-		    left: 300px;
-		    top: 1000px;
-		}
-		#mem4{
-		    display: inline;
-		    position: absolute;
-		    left: 300px;
-		    top: 1300px;
-		}
-		#chatroom{
-		    display: inline;
-		    position: absolute;
-		    left: 1000px;
-		    top: 850px;
-		}
-		#contents{
-		    height:600px;
-		    width :400px;
-			overflow-y: scroll;
-		  	z-index:2;
-		}
-		#note_chat{
-		    display: inline;
-		    position: absolute;
-		    left: -40px;
-		    top: -80px;
-		  	z-index:1;
-		}
-		#note_kokoa{
-		    display: inline;
-		    position: absolute;
-		    left: -270px;
-		    top: 170px;
-		  	z-index:1;
-		}
-		#deliver{
-		    display: inline;
-		    position: absolute;
-		    left: 50px;
-		    top:  750px;
-		  	z-index:2;
-		}
-		#like{
-		    display: inline;
-		    position: absolute;
-		    height:1000px;
-		    width :1000px;
-		    left: 700px;
-		    top:  700px;
-		}
-		#拍手{
-		    display: inline;
-		    position: absolute;
-		}
-		#拍手数{
-		    display: inline;
-		    position: absolute;
-		    left: 100px;
-		    top:  100px;
-		    font-size: 250%;
-		    color:#808BB6;
-		    font-family: 'Meiryo', cursive;
-		}
+		@import url(HeadTail.css);
+		@import url(index_main.css);
 	</style>
 	</meta>
+	<script src="stringtable.js"></script>
+	<script src="cookie.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="index.js"></script>
+	<script src="LangChange.js"></script>
   </head>
   <body>
     <div class="all">
-	    <div class="bg">
-	    </div>
-	    <div class="Bigpic">
-	    </div>
-	    <div class="chino">
-	    	<nav>   	
-	    		<div>
-					<font size="7" color="#808BB6"><b>開発中のゲーム</b></font>
-		      	</div>
-	    		<div id="game_cover">
-		      		<a href=""><img src="game_cover.jpg"  width="889" height="500"   alt="cover"></a>
-		      	</div>		      	
-	    		<div>
-					<font size="7" color="#808BB6"><b>スタフ</b></font>
-		      	</div>
-	    		<div>
-					<font size="5" color="#808BB6"><br>チノ</font>
-		      	</div>
-	    		<div id="cover">
-		      		<a href="chino/p1.html"><img src="cover.png"  width="445.5" height="250"   alt="cover"></a>
-		      	</div>
-	    		<div>
-	    			<div id ="mem1">
-		    			<font size="5" color="#808BB6"><br><br>李佳昇<br></font>
-						<a href="Member1/p1.html"><img src="Member1/portrait_1.jpg" width ="200" height="200" alt="bb"></a>					
-	    			</div>
-	    			<div id ="mem2">
-		    			<font size="5" color="#808BB6"><br><br>吳映諦<br></font>
-						<a href="Member2/p1.html"><img src="Member2/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-	    			</div>
-	    			<div id ="mem3">
-		    			<font size="5" color="#808BB6"><br><br>鍾旭成<br></font>
-						<a href="Member3/p1.html"><img src="Member3/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-	    			</div>
-	    			<div id ="mem4">
-		    			<font size="5" color="#808BB6"><br><br>魏子軒<br></font>
-						<a href="Member4/p1.html"><img src="Member4/portrait_1.jpg" width ="200" height="200" alt="bb"></a>
-						<br><br><br><br><br>
-	    			</div>
-		      	</div>
-	    		<div id="chatroom">
-	    			<font size="7" color="#808BB6"><br>チャットルーム<br></font>
-		      		<img id="note_chat" src="note_chat.png" width ="0" height="0" alt="cover">
-		      		<img id="note_kokoa" src="kokoa.gif" width ="276" height="509" alt="cover">
-				    <div id="contents"></div>
-				    <div id="deliver">
-					    <input type="text"></input>
-					    <button>転送！！</button>
-				    </div>
-		      	</div>
-			    <div id="like">
-	    			<nav>
-		    			<font size="5" color="#808BB6"><br>貴方も好きですか？クリックしてね<br><br></font>
-				    	<div id="拍手"><img id="拍手数図" src="拍手.jpg" width ="64" height="64" alt="cover"></div>
-				    	<div id="拍手数"></div>
-				    	<font size="5" color="#808BB6"><br>　　　　　　　　拍手<br><br></font>
-	    			</nav>
+	    <div class="HEAD">
+	    	<div id = "Headbg"><img src="index/pic/Headbg.png" width="1920" height="100"   alt="Contract_txt"></div>
+			    <div class="Copyright">
+				    <a href="index.html">
+				      	<div id="Copyright_pic"><img src="index/pic/Copyright_pic.png" width="100" height="100"   alt="Copyright_pic"></div>
+				      	<div id="Copyright_txt"><img id="Copyright_txt_img" src="index/pic/Copyright_txt.png" width="200" height="100"   alt="Copyright_txt"></div>
+				    </a>
 			    </div>
-	   			<div class="占い">
-		      		</nav>
-			    		<div>
-				      		<img id="占い結果" src="" width="320" height="180"  alt="coffee_cup">
-				      	</div>
-			    		<div>
-				      		<img id="占い結果文字" src="" width="240" height="160"  alt="coffee_cup">
-				      	</div>
-			    		<div id="カップ">
-				      		<img src="coffee_cup.png" width="290" height="290"   alt="coffee_cup">
-				      	</div>
-	      			</nav>
-		      	</div>
-			    <div class="article">
-			    	<pre><font size=5><b>Please use encode <font color=red>UTF-8</font> and <font color=red>Chrome</font></b></font></pre>
+			    <div class="Register">
+				    <a href="Register.html">
+				      	<div id="Register_pic"><img src="index/pic/Register_pic.png" width="100" height="100"   alt="Register_pic"></div>
+				      	<div id="Register_txt"><img id="Register_txt_img" src="index/pic/Register_txt.png" width="200" height="100"   alt="Register_txt"></div>
+				    </a>
 			    </div>
-	      	</nav>
+			    <div class="Shop">
+				    <a href="Shop.html">
+				      	<div id="Shop_pic"><img src="index/pic/Shop_pic.png" width="100" height="100"   alt="Shop_pic"></div>
+				      	<div id="Shop_txt"><img id="Shop_txt_img" src="index/pic/Shop_txt.png" width="200" height="100"   alt="Shop_txt"></div>
+				    </a>
+			    </div>
+		    <div class="Lang">
+			    <a href="">
+			      	<div id="CHT"><img id="CHT_p" src="index/pic/CHT.png" width="100" height="100"   alt="CHT"></div>
+			      	<div id="JPN"><img id="JPN_p" src="index/pic/JPN.png" width="100" height="100"   alt="JPN"></div>
+			    </a>
+		    </div>
+	    </div>
+		<div class ="wrap">
+		    <div class="GAME">
+		    	<div id="Txt">
+					<b><font size="7" color="#808BB6" id="01">発売予定日：近日発売！</font></b>
+			    </div>
+		    	<div id="Game_cover">
+			   		<a href=""><img src="index/pic/Game_cover.png"  width="1024" height="576"   alt="Game_cover"></a>
+			    </div>
+	   			<div id="占い">
+		    		<div>
+			      		<img id="占い結果" src="" width="320" height="180"  alt="coffee_cup">
+			      	</div>
+		    		<div>
+			      		<img id="占い結果文字" src="" width="240" height="160"  alt="coffee_cup">
+			      	</div>
+		    		<div id="カップ">
+			      		<img src="index/pic/coffee_cup.png" width="290" height="290"   alt="coffee_cup">
+			      	</div>
+				</div>
+		    	<div id="Play">
+			   		<a href="Game.html"><img id="play_btn" src="index/pic/Play_ready.png"  width="300" height="300"   alt="Play_ready"></a>
+			    </div>
+		    	<div id="Register">
+			   		<a href="Register.html"><img id="reg_btn" src="index/pic/Register_ready.png"  width="300" height="300"   alt="Register_ready"></a>
+			    </div>
+				<div id="Like">
+	    			<font size="5" color="#808BB6" id="02"><br>貴方も好きですか？クリックしてね<br><br></font>
+			    	<div id="拍手"><img id="拍手数図" src="index/pic/拍手.jpg" width ="64" height="64" alt="cover"></div>
+			    	<div id="拍手数"></div>
+			    	<font size="5" color="#808BB6"><br>　　　　　　　　拍手<br><br></font>
+			    </div>
+		    </div>
+		    <div class="INFO">
+		    	<div id = "TXT_ゲーム紹介">
+					<b><font size="7" color="#808BB6" id="03">　　　このゲームについて</font></b>
+			    </div>
+			    <div id = "INFO1"><img src="index/pic/INFO1.jpg"  width="" height=""   alt="INFO"></div>
+		    	<div id = "TXT_キャラ紹介">
+					<b><font size="7" color="#808BB6" id="04">　　　　　キャラ紹介</font></b>
+			    </div>
+			    <div id = "INFO2"><img src="index/pic/INFO2.jpg"  width="" height=""   alt="INFO"></div>
+		    </div>
+	   		<div class="CHATROOM">
+	   			<b><font size="7" color="#808BB6" id="05"><br>チャットルーム<br></font></b>
+	      		<img id="note_chat" src="index/pic/note_chat.png" width ="0" height="0" alt="cover">
+	      		<img id="note_kokoa" src="index/pic/kokoa.gif" width ="276" height="509" alt="cover">
+			    <div id="contents"></div>
+			    <div id="deliver">
+				    <input type="text"></input>
+				    <button>転送！！</button>
+			    </div>
+	    		<div id="dia">
+		      		<img  src="index/pic/cocoa_dia_1.png" width="160" height="460" alt="chino_1">
+		      	</div>
+	      	</div>
+		    <div class="GAME_TAIL">
+		    	<div id="Txt_TAIL">
+					<b><font size="7" color="#808BB6" id="06">さあー早く遊びましょう！！</font></b>
+			    </div>
+		    	<div id="Game_cover_TAIL">
+			   		<a href=""><img src="index/pic/Game_cover.png"  width="1024" height="576"   alt="Game_cover"></a>
+			    </div>
+		    	<div id="Play_TAIL">
+			   		<a href="Game.html"><img id="play_btn2" src="index/pic/Play_ready.png"  width="300" height="300"   alt="Play_ready"></a>
+			    </div>
+		    	<div id="Register_TAIL">
+			   		<a href="Register.html"><img id="reg_btn2" src="index/pic/Register_ready.png"  width="300" height="300"   alt="Register_ready"></a>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="TAIL">
+	    	<div id = "Tailbg"><img src="index/pic/Headbg.png" width="1920" height="100"   alt="Contract_txt"></div>
+	    	<div class="About">
+			      	<a href="About.html"><img src="index/pic/About_pic.png" width="100" height="100"   alt="About_pic"></a>
+			      	<a href="About.html"><img id="About_txt_img" src="index/pic/About_txt.png" width="200" height="100"   alt="About_txt"></a>
+			    </a>
+		    </div>
+		    <div class="Contract">
+			      	<a href="Contract.html"><img src="index/pic/Contract_pic.png" width="100" height="100"   alt="Contract_pic"></a>
+			      	<a href="Contract.html"><img id="Contract_txt_img" src="index/pic/Contract_txt.png" width="200" height="100"   alt="Contract_txt"></a>
+			    </a>
+		    </div>
+		    <div class="Help">
+			      	<a href="Help.html"><img src="index/pic/Help_pic.png" width="100" height="100"   alt="Help_pic"></a>
+			      	<a href="Help.html"><img id="Help_txt_img" src="index/pic/Help_txt.png" width="200" height="100"   alt="Help_txt"></a>
+			    </a>
+		    </div>
+		    <div class="Career">
+			    <a href="Career.html"><img src="index/pic/Career_pic.png" width="100" height="100"   alt="Career_pic"></a>
+			    <a href="Career.html"><img id="Career_txt_img" src="index/pic/Career_txt.png" width="200" height="100"   alt="Career_txt"></a>
+		    </div>
 	    </div>
     </div>
   </body>
