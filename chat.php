@@ -1,7 +1,8 @@
 <?php
 chmod("chat_record.txt",0777);
 $text = @$_POST["text"];
-if($text)
+$actions = @$_POST["actions"];
+if($text!="")
 {
 	if(strcasecmp((string)$text, "\$clear") == 0)
 	{

@@ -112,7 +112,7 @@ function regist()
 	var account = document.getElementById('account').value;
 	var passwd = document.getElementById('passwd').value;
 	var id = document.getElementById('id').value;
-	var output = "{\"Account\":\"" +account+ "\",\"Passwd\":\"" +passwd+"\",\"ID\":\""+id+"\",\"Money\":\"0\",\"DialogID\":{"+
+	var output = "{\"Account\":\"" +account+ "\",\"Passwd\":\"" +passwd+"\",\"ID\":\""+id+"\",\"Money\":\"3000\",\"DialogID\":{"+
 				"\n\"00\":{\"save1\":\"00_01_01\",\"save2\":\"\",\"save3\":\"\",\"save4\":\"\",\"save5\":\"\"},"+
 				"\n\"01\":{\"save1\":\"01_01_01\",\"save2\":\"\",\"save3\":\"\",\"save4\":\"\",\"save5\":\"\"},"+
 				"\n\"02\":{\"save1\":\"UNAVAILABLE\",\"save2\":\"\",\"save3\":\"\",\"save4\":\"\",\"save5\":\"\"}}\n,"+
@@ -201,7 +201,7 @@ function checkinput()
 	}
 	for(var i = 0;i < account.length;i++)
 	{
-		if(account.charAt(i)=='\\' || account.charAt(i)=='/' || account.charAt(i)==':' || account.charAt(i)=='*' || account.charAt(i)=='?' || account.charAt(i)=='<' || account.charAt(i)=='>' || account.charAt(i)=='|' ||account.charAt(i)=='$'||account.charAt(i)=='"')
+		if(account.charAt(i)=='\\' || account.charAt(i)=='/' || account.charAt(i)==':' || account.charAt(i)=='*' || account.charAt(i)=='?' || account.charAt(i)=='<' || account.charAt(i)=='>' || account.charAt(i)=='|' ||account.charAt(i)=='$'||account.charAt(i)=='"'||account.charAt(i)=='.'||account.charAt(i)==';')
 		{
 			var error = document.createElement("p");
 			error.setAttribute("id", "error");
@@ -220,12 +220,12 @@ function checkinput()
 					       .animate({marginTop: "000px",marginLeft: "+8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "-8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "0px"}, 70,function(){});
-				return false;
+			return false;
 		}
 	}
 	for(var i = 0;i < passwd.length;i++)
 	{
-		if(passwd.charAt(i)=='\\' || passwd.charAt(i)=='/' || passwd.charAt(i)==':' || passwd.charAt(i)=='*' || passwd.charAt(i)=='?' || passwd.charAt(i)=='<' || passwd.charAt(i)=='>' || passwd.charAt(i)=='|' ||passwd.charAt(i)=='$'||passwd.charAt(i)=='"')
+		if(passwd.charAt(i)=='\\' || passwd.charAt(i)=='/' || passwd.charAt(i)==':' || passwd.charAt(i)=='*' || passwd.charAt(i)=='?' || passwd.charAt(i)=='<' || passwd.charAt(i)=='>' || passwd.charAt(i)=='|' ||passwd.charAt(i)=='$'||passwd.charAt(i)=='"'||passwd.charAt(i)=='.'||passwd.charAt(i)==';')
 		{
 			var error = document.createElement("p");
 			error.setAttribute("id", "error");
@@ -244,12 +244,12 @@ function checkinput()
 					       .animate({marginTop: "000px",marginLeft: "+8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "-8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "0px"}, 70,function(){});
-				return false;
+			return false;
 		}
 	}
 	for(var i = 0;i < passwd2.length;i++)
 	{
-		if(passwd2.charAt(i)=='\\' || passwd2.charAt(i)=='/' || passwd2.charAt(i)==':' || passwd2.charAt(i)=='*' || passwd2.charAt(i)=='?' || passwd2.charAt(i)=='<' || passwd2.charAt(i)=='>' || passwd2.charAt(i)=='|' ||passwd2.charAt(i)=='$'||passwd2.charAt(i)=='"')
+		if(passwd2.charAt(i)=='\\' || passwd2.charAt(i)=='/' || passwd2.charAt(i)==':' || passwd2.charAt(i)=='*' || passwd2.charAt(i)=='?' || passwd2.charAt(i)=='<' || passwd2.charAt(i)=='>' || passwd2.charAt(i)=='|' ||passwd2.charAt(i)=='$'||passwd2.charAt(i)=='"'||passwd2.charAt(i)=='.'||passwd2.charAt(i)==';')
 		{
 			var error = document.createElement("p");
 			error.setAttribute("id", "error");
@@ -268,12 +268,12 @@ function checkinput()
 					       .animate({marginTop: "000px",marginLeft: "+8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "-8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "0px"}, 70,function(){});
-				return false;
+			return false;
 		}
 	}
 	for(var i = 0;i < id.length;i++)
 	{
-		if(id.charAt(i)=='\\' || id.charAt(i)=='/' || id.charAt(i)==':' || id.charAt(i)=='*' || id.charAt(i)=='?' || id.charAt(i)=='<' || id.charAt(i)=='>' || id.charAt(i)=='|' ||id.charAt(i)=='$'||id.charAt(i)=='"')
+		if(id.charAt(i)=='\\' || id.charAt(i)=='/' || id.charAt(i)==':' || id.charAt(i)=='*' || id.charAt(i)=='?' || id.charAt(i)=='<' || id.charAt(i)=='>' || id.charAt(i)=='|' ||id.charAt(i)=='$'||id.charAt(i)=='"'||id.charAt(i)=='.'||id.charAt(i)==';')
 		{
 			var error = document.createElement("p");
 			error.setAttribute("id", "error");
@@ -292,7 +292,7 @@ function checkinput()
 					       .animate({marginTop: "000px",marginLeft: "+8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "-8px"}, 70,function(){})
 			  			   .animate({marginTop: "000px",marginLeft: "0px"}, 70,function(){});
-				return false;
+			return false;
 		}
 	}
 	return true;

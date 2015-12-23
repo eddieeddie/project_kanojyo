@@ -24,6 +24,7 @@ $(document).ready(function(){
 			$("#選択").hide();
 			$("#sce00").hide();
 			$("#sce01").hide();
+			$("#sce02").hide();
 		}
 		setInterval(function(){
 			SetFont();
@@ -47,22 +48,76 @@ $(document).ready(function(){
 });
 function SelectScenario()
 {
+	CheckOwn();
 	$("#選択").show();
 	$("#sce00").show();
 	$("#sce01").show();
+	$("#sce02").show();
 	$("#sce00").click(function(){
-		document.getElementById("選択").remove();
-		document.getElementById("sce00").remove();
-		document.getElementById("sce01").remove();
-		ScenarioID = "00";
-		SelectSave("open");
+		if(SaveUserData.DialogID["00"]["save1"]!="UNAVAILABLE")
+		{
+			document.getElementById("選択").remove();
+			document.getElementById("sce00").remove();
+			document.getElementById("sce01").remove();
+			document.getElementById("sce02").remove();
+			ScenarioID = "00";
+			SelectSave("open");
+		}
+		else
+		{
+			var error = document.createElement("p");
+			error.setAttribute("id", "error");
+			error.setAttribute("style", "position:absolute;opacity:0;z-index: 5;left:195px;top:130px;font-family:微軟正黑體;color:#ff0000;white-space:nowrap;");
+			document.getElementById("sce00div").appendChild(error);
+			if(lang == "cht")document.getElementById('error').innerHTML = "請先購買";
+			if(lang == "jpn")document.getElementById('error').innerHTML = "買ってくださいね";
+			$("#error").animate({opacity: 1}, 300,function(){})
+							.animate({opacity: 0}, 1300,function(){document.getElementById("error").remove();});
+		}
 	});
 	$("#sce01").click(function(){
-		document.getElementById("選択").remove();
-		document.getElementById("sce00").remove();
-		document.getElementById("sce01").remove();
-		ScenarioID = "01";
-		SelectSave("open");
+		if(SaveUserData.DialogID["01"]["save1"]!="UNAVAILABLE")
+		{
+			document.getElementById("選択").remove();
+			document.getElementById("sce00").remove();
+			document.getElementById("sce01").remove();
+			document.getElementById("sce02").remove();
+			ScenarioID = "01";
+			SelectSave("open");
+		}
+		else
+		{
+			var error = document.createElement("p");
+			error.setAttribute("id", "error");
+			error.setAttribute("style", "position:absolute;opacity:0;z-index: 5;left:195px;top:230px;font-family:微軟正黑體;color:#ff0000;white-space:nowrap;");
+			document.getElementById("sce01div").appendChild(error);
+			if(lang == "cht")document.getElementById('error').innerHTML = "請先購買";
+			if(lang == "jpn")document.getElementById('error').innerHTML = "買ってくださいね";
+			$("#error").animate({opacity: 1}, 300,function(){})
+							.animate({opacity: 0}, 1300,function(){document.getElementById("error").remove();});
+		}
+	});
+	$("#sce02").click(function(){
+		if(SaveUserData.DialogID["02"]["save1"]!="UNAVAILABLE")
+		{
+			document.getElementById("選択").remove();
+			document.getElementById("sce00").remove();
+			document.getElementById("sce01").remove();
+			document.getElementById("sce02").remove();
+			ScenarioID = "02";
+			SelectSave("open");
+		}
+		else
+		{
+			var error = document.createElement("p");
+			error.setAttribute("id", "error");
+			error.setAttribute("style", "position:absolute;opacity:0;z-index: 5;left:195px;top:330px;font-family:微軟正黑體;color:#ff0000;white-space:nowrap;");
+			document.getElementById("sce02div").appendChild(error);
+			if(lang == "cht")document.getElementById('error').innerHTML = "請先購買";
+			if(lang == "jpn")document.getElementById('error').innerHTML = "買ってくださいね";
+			$("#error").animate({opacity: 1}, 300,function(){})
+							.animate({opacity: 0}, 1300,function(){document.getElementById("error").remove();});
+		}
 	});
 }
 function SelectSave(action)
@@ -214,7 +269,6 @@ function loadgame()
 	       }).done(function(data){
 		   if(data.charAt(0)=="{")
 	       {	       	   
-				SaveUserData = JSON.parse(userdata);
 	       		DialogSet = data;
 				UserID = JSON.parse(userdata).ID;//save會用到
 				UserPasswd = JSON.parse(userdata).Passwd;//save會用到
@@ -351,6 +405,39 @@ function PlayAudio()
    		}, 100);
 	});
 }
+/*
+function PlayAudio()
+{
+	var currentDialogID = DialogID;
+	var currentBGM = BGM;
+	if(BGM!="NONE"&&BGM!="CONTINUE")
+	{
+		var audio1 = new Audio(BGM);
+		audio1.volume=.8;
+		audio1.play();
+		audio1.loop = true;
+	}
+	if(Sound!="NONE")
+	{
+		var audio2 = new Audio(Sound)
+		audio2.volume=1.0;
+		audio2.play();
+	}
+	$(document).ready(function()
+	{
+		setInterval(function()
+		{
+			if(DialogID!=currentDialogID&&BGM!="CONTINUE")//換對話時切音樂
+			{
+				audio1.pause();
+				audio1.currentTime = 0;
+				audio2.pause();
+				audio2.currentTime = 0;
+			}
+   		}, 100);
+	});
+}
+*/
 function NewsetGame()//根據對話設置場景
 {
 	if(DialogID=="EXIT")window.location.assign("index.html");
@@ -437,6 +524,13 @@ function NextMouseAct(index)
 	$("#sce01").mouseout(function(){
 		document.getElementById("sce01").src = "Game/SelectScenario/Sce01Normal.png";
 		document.getElementById("sce01").style.opacity = 0.75;});
+			
+	$("#sce02").mouseover(function(){		
+		document.getElementById("sce02").src = "Game/SelectScenario/Sce02Hover.png";
+		document.getElementById("sce02").style.opacity = 1;});
+	$("#sce02").mouseout(function(){
+		document.getElementById("sce02").src = "Game/SelectScenario/Sce02Normal.png";
+		document.getElementById("sce02").style.opacity = 0.75;});
 }
 function NextMouseAct_Save(index,action)
 {
@@ -493,4 +587,13 @@ function NextMouseAct_Save(index,action)
 			if(action=="open")loadgame();
 		}
 	});
+}
+
+
+
+function CheckOwn()
+{
+	if(SaveUserData.DialogID["00"]["save1"]=="UNAVAILABLE")document.getElementById("sce00").style.WebkitFilter  = 'grayscale(100%)';
+	if(SaveUserData.DialogID["01"]["save1"]=="UNAVAILABLE")document.getElementById("sce01").style.WebkitFilter  = 'grayscale(100%)';
+	if(SaveUserData.DialogID["02"]["save1"]=="UNAVAILABLE")document.getElementById("sce02").style.WebkitFilter  = 'grayscale(100%)';
 }

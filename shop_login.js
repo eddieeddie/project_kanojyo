@@ -14,24 +14,20 @@ $(document).ready(function(){
 	        }).done(function(data){
 	        	if(data.charAt(0)=="{")
 	        	{
-	        		document.getElementById("ID").setAttribute("style", "position:absolute;opacity:0;left:-830px;top:-50px");
-	        		document.getElementById("sce00").setAttribute("style", "position:absolute;opacity:0;left:0px;top:275px");
-	        		document.getElementById("sce01").setAttribute("style", "position:absolute;opacity:0;left:0px;top:375px");
-	        		document.getElementById("sce02").setAttribute("style", "position:absolute;opacity:0;left:0px;top:475px");
-					if(lang == "cht")document.getElementById("ID").innerHTML = JSON.parse(data).ID+"，歡迎回來";
-					if(lang == "jpn")document.getElementById("ID").innerHTML = JSON.parse(data).ID+"，お帰り";
-					$("#ID").animate({opacity: 1}, 1000,function(){
-								if(lang == "cht")document.getElementById("ID").innerHTML = "名稱："+JSON.parse(data).ID;
-								if(lang == "jpn")document.getElementById("ID").innerHTML = "名前："+JSON.parse(data).ID;})
-						.animate({marginTop: "-10px",marginLeft: "830px"}, 500,function(){});
-					$("#sce00").animate({opacity: 0.75}, 1000,function(){})
-						.animate({marginTop: "-160px",marginLeft: "0px"}, 500,function(){});
-					$("#sce01").animate({opacity: 0.75}, 1000,function(){})
-						.animate({marginTop: "-160px",marginLeft: "0px"}, 500,function(){});
-					$("#sce02").animate({opacity: 0.75}, 1000,function(){})
-						.animate({marginTop: "-160px",marginLeft: "0px"}, 500,function(){});
+	        		document.getElementById("ID").setAttribute("style", "position:absolute;opacity:0;left:0px;top:-150px;font-size:36px;font-family:微軟正黑體;font-weight:bold;white-space: nowrap;");
+	        		document.getElementById("Money").setAttribute("style", "position:absolute;opacity:0;left:0px;top:-50px;font-size:36px;font-family:微軟正黑體;font-weight:bold;white-space: nowrap;");
 	        		userdata = data;
-					SaveUserData = JSON.parse(userdata);
+	        		SaveUserData = JSON.parse(userdata);
+					if(lang == "cht")document.getElementById("ID").innerHTML = SaveUserData.ID+"，歡迎回來";
+					if(lang == "jpn")document.getElementById("ID").innerHTML = SaveUserData.ID+"，お帰り";
+					$("#ID").animate({opacity: 1}, 1000,function(){
+								if(lang == "cht")document.getElementById("ID").innerHTML = "名稱："+SaveUserData.ID;
+								if(lang == "jpn")document.getElementById("ID").innerHTML = "名前："+SaveUserData.ID;})
+						.animate({marginTop: "-10px",marginLeft: "830px"}, 500,function(){});
+					$("#Money").animate({opacity: 1}, 1000,function(){
+								if(lang == "cht")document.getElementById("Money").innerHTML = "錢包："+SaveUserData.Money;
+								if(lang == "jpn")document.getElementById("Money").innerHTML = "財布："+SaveUserData.Money;})
+						.animate({marginTop: "-10px",marginLeft: "830px"}, 500,function(){});
 	        	}
 	        	else if(data=="error1")
 	        	{

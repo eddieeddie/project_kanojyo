@@ -4,13 +4,49 @@
 			.MAIN{/*width="1280"*/
 			    overflow: auto;
 			    padding-bottom: 100px;
-			    width: 1920px;
+			    width: 1800px;
 			}
 				#Theme{
 				    display: inline;
 				    position: absolute;
 				    left: 700px;
 			   		top: 150px;
+				}
+				#LOG{
+				    display: inline;
+				    position: absolute;
+				    left: 700px;
+			   		top: 350px;
+				}
+				#UserInfo{
+				    display: inline;
+				    position: absolute;
+				    left: 500px;
+			   		top: 550px;
+				}
+				#ItemList{
+				    display: inline;
+				    position: absolute;
+				    left: 300px;
+			   		top: 280px;
+				}
+				#Cost{
+				    display: inline;
+				    position: absolute;
+				    left: 500px;
+			   		top: 730px;
+				}
+				#Digits{
+				    display: inline;
+				    position: absolute;
+				    left: 670px;
+			   		top: 715px;
+				}
+				#Checkout{
+				    display: inline;
+				    position: absolute;
+				    left: 1040px;
+			   		top: 710px;
 				}
 				#Content{
 				    display: inline;
@@ -22,5 +58,5 @@
 				    display: inline;
 				    position: absolute;
 				    left: 200px;
-			   		top: 350px;
+			   		top: 850px;
 				}

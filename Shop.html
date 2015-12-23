@@ -8,12 +8,15 @@
 			@import url(Shop_main.css);
 		</style>
 	</meta>
+	<script src="Shop_Global_Variable.js"></script>
 	<script src="stringtable.js"></script>
 	<script src="cookie.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="index.js"></script>
-	<script src="Shop.js"></script>
 	<script src="LangChange.js"></script>
+	<script src="Shop.js"></script>
+	<script src="Shop_login.js"></script>
+	<script src="Shop_BtnEffect.js"></script>
 	</head>
 	<body>
 	    <div class="all">
@@ -48,13 +51,37 @@
 			<div class ="wrap">
 			    <div class ="MAIN">
 				    <div id ="Theme">
-						<b><font size="7" color="#808BB6" id="Title">ストア</font></b>
+						<b><font size="7" color="#808BB6" id="Title" face="微軟正黑體">ストア</font></b>
 					</div>
+					<div id ="LOG">
+						<b><font size="7" color="#808BB6" id="logid" face="微軟正黑體">ログイン</b></font></b>
+						<b><div id="アカウントdiv"><font size="3" color="#808BB6" id="accountWord" face="微軟正黑體"><br>アカウント</font></b><input type="text" id="account"></input></div>
+						<b><div id="パスワードdiv"><font size="3" color="#808BB6" id="passwdWord" face="微軟正黑體"><br>パスワード</font></b><input type="password" id="passwd"></input></div>
+						<br><img id="deliverbtn" src="Shop/CheckoutBtnNormal.png" width="" height=""   alt="">
+					</div>
+					<div id ="UserInfo">
+						<font size="5" color="#ff9966"><p id="ID" face="微軟正黑體"></p></font>
+						<font size="5" color="#ff99cc"><p id="Money" face="微軟正黑體"></p></font>
+					</div>
+				    <div id ="ItemList"></div>
+				    <div id ="Cost">
+				    </div>
+				    <div id ="Digits">
+				    	<img id="digit0" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    	<img id="digit1" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    	<img id="digit2" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    	<img id="digit3" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    	<img id="digit4" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    	<img id="digit5" src="Shop/pic/number/0.png" width="" height=""   alt="">
+				    </div>
+				    <div id ="Checkout">
+				    	<img id="checkoutbtn" src="Shop/CheckoutBtnNormal.png" width="" height=""   alt="">
+				    </div>
 				    <div id ="Content">
-						<b><font size="6" color="#808BB6" id="内容">期間限定、無料中！！</font></b>
+						<b><font size="6" face="微軟正黑體" color="red" id="内容">期間限定、発売中！！</font></b>
 					</div>
 				    <div id ="Content_pic">
-						<img src="Shop/Shop.jpg" width="1280" height="720"   alt="">
+						<img src="" width="" height=""   alt="">
 					</div>
 			    </div>
 		    </div>

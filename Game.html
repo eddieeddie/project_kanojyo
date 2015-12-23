@@ -14,24 +14,7 @@
 	<script src="cookie.js"></script>
 	<script src="LangChange.js"></script>
 	<script src="GameEvent.js"></script>
-	<script>
-		var userdata;
-		var UserPasswd;
-		var ScenarioID;
-		var UserMoney;
-		var UserDialogCollection;
-		var UserSaveTimeCollection;
-		var DialogID;
-		var DialogSet;
-		var UserID;
-		var UserAccount;
-		var Character;
-		var CharacterName;
-		var BGM;
-		var Sound;
-		var UserLove;
-		var BGpath;
-	</script>
+	<script src="Game_Global_Variable.js"></script>
 	<script src="game.js"></script>
 	<script src="game_login.js"></script>
 	</head>
@@ -72,8 +55,8 @@
 			<div class ="C"></div>
 			<div class ="A">
 				<div id ="SaveBlock">
-					<font size="5" color="#ff9966"><p id="ID"></p></font>
-					<font size="5" color="#ff99cc"><p id="Love"></p></font>
+					<font size="5" color="#ff9966"><p id="ID" face="微軟正黑體"></p></font>
+					<font size="5" color="#ff99cc"><p id="Love" face="微軟正黑體"></p></font>
 					<img id="save" src="Game/saveBtnNormal.png" width="" height=""   alt="">
 				</div>
 			</div>
@@ -85,23 +68,23 @@
 					<div><img id="Txtframe" src="Game/Txtframe_dummy.png" width="" height=""   alt=""></div>
 				</div>
 				<div id ="dia0">
-					<font size="6" color="#FFFFFF"id="diastring0Font"><p id="diaContent"></p></font>
+					<font size="6" color="#FFFFFF"id="diastring0Font" face="微軟正黑體"><p id="diaContent"></p></font>
 					<div><img id="CurrentDia" src="" width="" height=""   alt=""></div>
 				</div>
 				<div id ="dia1">
-					<font size="6" color="#8EFFC1"id="diastring1Font"><p id="diastring1"></p></font>
+					<font size="6" color="#8EFFC1"id="diastring1Font" face="微軟正黑體"><p id="diastring1"></p></font>
 					<div><img id="NextDia1" src="" width="" height=""   alt=""></div>
 				</div>
 				<div id ="dia2">
-					<font size="6" color="#8EFFC1"id="diastring2Font"><p id="diastring2"></p></font>
+					<font size="6" color="#8EFFC1"id="diastring2Font" face="微軟正黑體"><p id="diastring2"></p></font>
 					<div><img id="NextDia2" src="" width="" height=""   alt=""></div>
 				</div>
 				<div id ="dia3">
-					<font size="6" color="#8EFFC1"id="diastring3Font"><p id="diastring3"></p></font>
+					<font size="6" color="#8EFFC1"id="diastring3Font" face="微軟正黑體"><p id="diastring3"></p></font>
 					<div><img id="NextDia3" src="" width="" height=""   alt=""></div>
 				</div>
 				<div>
-					<font size="5" color="#FF3CDE"><p id = "CharName"></p></font>
+					<font size="5" color="#FF3CDE" face="微軟正黑體"><p id = "CharName"></p></font>
 				</div>
 			</div>
 			<div class ="SelectSave">
@@ -118,13 +101,14 @@
 			<div class ="wrap">
 			    <div class ="MAIN">
 				    <div id ="Theme">
-						<b><font size="7" color="#808BB6" id="Title">ログイン</b></font></b>
-						<b><div id="アカウントdiv"><font size="3" color="#808BB6" id="accountWord"><br>アカウント</font></b><input type="text" id="account"></input></div>
-						<b><div id="パスワードdiv"><font size="3" color="#808BB6" id="passwdWord"><br>パスワード</font></b><input type="password" id="passwd"></input></div>
+						<b><font size="7" color="#808BB6" id="Title" face="微軟正黑體">ログイン</b></font></b>
+						<b><div id="アカウントdiv"><font size="3" color="#808BB6" id="accountWord" face="微軟正黑體"><br>アカウント</font></b><input type="text" id="account"></input></div>
+						<b><div id="パスワードdiv"><font size="3" color="#808BB6" id="passwdWord" face="微軟正黑體"><br>パスワード</font></b><input type="password" id="passwd"></input></div>
 						
-						<b><font size="7" color="#808BB6" id="選択">シナリオを選択してくださいね</font></b>
-						<div><img id="sce00" src="Game/SelectScenario/Sce00Normal.png" width="" height=""   alt=""></div><br><br>
-						<div><img id="sce01" src="Game/SelectScenario/Sce01Normal.png" width="" height=""   alt=""></div>
+						<b><font size="7" color="#808BB6" id="選択" face="微軟正黑體">シナリオを選択してくださいね</font></b>
+						<div id="sce00div"><img id="sce00" src="Game/SelectScenario/Sce00Normal.png" width="" height=""   alt=""></div><br><br>
+						<div id="sce01div"><img id="sce01" src="Game/SelectScenario/Sce01Normal.png" width="" height=""   alt=""></div><br><br>
+						<div id="sce02div"><img id="sce02" src="Game/SelectScenario/Sce02Normal.png" width="" height=""   alt=""></div>
 						<br><img id="deliverbtn" src="Game/LoginBtnNormal.png" width="" height=""   alt="">
 					</div>										
 			    </div>
